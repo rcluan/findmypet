@@ -11,6 +11,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { Facebook } from '@ionic-native/facebook';
+import { Camera } from '@ionic-native/camera';
+import { HttpModule } from '@angular/http';
+import { SocialSharing } from '@ionic-native/social-sharing';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +26,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,7 +40,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Facebook,
+    Camera,
+    SocialSharing
   ]
 })
 export class AppModule {}
